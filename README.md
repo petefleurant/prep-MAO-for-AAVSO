@@ -66,7 +66,7 @@ you might want to use as a comparison star comes from one of these catalogs, ask
 
 
 Notes:
-ftp://vphot.aavso.org user: FPIA pw: L3p3&sH5w*Fw
+ftp://vphot.aavso.org user: <observer code> <password (get it from VPhot admin)>
 
 
 From AB Aur Notes:
