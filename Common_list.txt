@@ -1,0 +1,23 @@
+#
+#
+# Common_list.txt
+#
+# This contains the list of vars to be processed.
+# Each line should be in the following format (year month date var), e.g., 2023 12 25 M Crux.
+# For AutoFlat, add one more token for temperature, e.g., 2023 12 21 AutoFlat 20
+#
+#
+#
+2024 11 24 VES 735
+#
+#2024 11 20 V615 Vul
+#
+2024 11 24 R Cnc
+#
+#2024 11 20 Y And
+#
+2024 11 24 S Gem
+#
+#2024 09 16 Z Tau
+#
+#2024 11 24 AutoFlat 10
