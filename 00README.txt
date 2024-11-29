@@ -1,10 +1,10 @@
 Procedure for managing Mittelman ATMoB Observatory (MAO) images for AAVSO submission.
 Scripts are run using bash and python in the UNIX based cygwin environment: 
-E:\cygwin64\$HOME\myScripts or ~/myScripts.     (HOME = /home/Owner; or = /home/PeteAndSue; or...)
+E:\cygwin64\$HOME\prep-MAO-for-AAVSO or ~/prep-MAO-for-AAVSO.     (HOME = /home/Owner; or = /home/PeteAndSue; or...)
 
 
 Quick Instructions:
-cd ~/myScripts
+cd ~/prep-MAO-for-AAVSO
 ./read-MAO-dir-list.sh ./Common_list.txt
 ./read-MAO-dir-list-chk-CCD-TEMP.sh ./Common_list.txt
 #Calibrate in PixInsight
@@ -16,7 +16,7 @@ cd ~/myScripts
 
 Detailed Instructions:
 
-1)	Save a “Common_list.txt” file in ~/myScripts containing the list of image sets. 
+1)	Save a “Common_list.txt” file in ~/prep-MAO-for-AAVSO containing the list of image sets. 
 	Example:
 		2023 10 08 V347 Aur
 		2023 10 08 CH Cyg
@@ -25,7 +25,7 @@ Detailed Instructions:
 		2023 10 08 AutoFlat 20   # the 20 is -20 celsius
 
 	The line beginning with '#' is ignored
-2)	cd ~/myScripts
+2)	cd ~/prep-MAO-for-AAVSO
 3)	execute ./read-MAO-dir-list.sh ./Common_list.txt; This creates directories and
 	copies MAO files from MAO’s Google drive to local machine
 		Source directories are listed:
