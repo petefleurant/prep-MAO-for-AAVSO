@@ -68,9 +68,9 @@ solve-field \
 --fits-image \
 --corr "none" \
 --index-xyls "none" \
---scale-low 1 \
---scale-high 2 \
 *.fit
+#--scale-low 1 \
+#--scale-high 2 \
 
 # These switches place a un-needed file in master
 #--axy "none" \
