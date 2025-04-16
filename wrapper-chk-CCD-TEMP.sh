@@ -63,11 +63,13 @@ else
     PYTHON_BASE_DATA_DIR="E:\\Astronomy\\AstronomyData\\MAO\\00CalibrationFiles\\Flats\\minus $celsius_temp"
 
     # check for sky flats 
-    if [ -e "$BASE_DATA_DIR/$maoDataDir/Flat-sky-B" ] && \
-       [ -e "$BASE_DATA_DIR/$maoDataDir/Flat-sky-V" ] ; 
+    if [ -e "$BASE_DATA_DIR/$maoDataDir/Flat-sky-B" ] || \
+       [ -e "$BASE_DATA_DIR/$maoDataDir/Flat-sky-V" ] || \
+       [ -e "$BASE_DATA_DIR/$maoDataDir/Flat-sky-I" ] || \
+       [ -e "$BASE_DATA_DIR/$maoDataDir/Flat-sky-R" ] ; 
     then
         found_flats=true
-        echo "checking CCD-TEMP for 'sky' $BASE_DATA_DIR/$MAO_YEAR/$maoDataDir/Flat-sky-[BV]"
+        echo "checking CCD-TEMP for 'sky' $BASE_DATA_DIR/$MAO_YEAR/$maoDataDir/Flat-sky-[BVIR]"
 
         # Call chk-CCD-TEMP.py for B 
         which python
@@ -76,6 +78,15 @@ else
         # Call chk-CCD-TEMP.py for V
         which python
         python chk-CCD-TEMP.py "$PYTHON_BASE_DATA_DIR\\$maoDataDir\\Flat-sky-V"
+
+        # Call chk-CCD-TEMP.py for I
+        which python
+        python chk-CCD-TEMP.py "$PYTHON_BASE_DATA_DIR\\$maoDataDir\\Flat-sky-I"
+
+        # Call chk-CCD-TEMP.py for R
+        which python
+        python chk-CCD-TEMP.py "$PYTHON_BASE_DATA_DIR\\$maoDataDir\\Flat-sky-R"
+        echo "Completed Checking Sky-Flats CCD-TEMP"
 
     # check for panel flats 
     fi
