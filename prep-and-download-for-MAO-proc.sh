@@ -88,7 +88,7 @@ if [ $4 != 'AutoFlat' ]; then
         echo "copying $MAO_PETE/$varName/$varName-$maoDate"
         cp -r "$MAO_PETE/$varName/$varName-$maoDate" "$BASE_DATA_DIR/$MAO_YEAR/$maoDir"
     else
-        echo "Cannot find $varName on MAO Drive"
+        echo "Cannot find $varName on MAO Drive; MAO_Pete=$MAO_Pete; MAO_PIERRE=$MAO_PIERRE" 
         exit 1
     fi
 
@@ -119,17 +119,21 @@ else
         mkdir "$BASE_DATA_DIR/$maoDataDir" 2>/dev/null 
     fi
 
-    #Copy corresponding MAO Drive folders for B and V only to the newly created directory
+    #Copy corresponding MAO Drive folders for V, B, I and V to the newly created directory
 
     MAO_AUTOFLAT="$HOME/MAO-AutoFlat"
 
     if [ -e "$MAO_AUTOFLAT/$maoDriveDir" ] && \
         [ -e "$MAO_AUTOFLAT/$maoDriveDir/Flat-sky-V" ] && \
-        [ -e "$MAO_AUTOFLAT/$maoDriveDir/Flat-sky-B" ];
+        [ -e "$MAO_AUTOFLAT/$maoDriveDir/Flat-sky-B" ] && \
+        [ -e "$MAO_AUTOFLAT/$maoDriveDir/Flat-sky-I" ] && \
+        [ -e "$MAO_AUTOFLAT/$maoDriveDir/Flat-sky-R" ];
     then
         echo "copying $MAO_AUTOFLAT/$maoDriveDir"
         cp -r "$MAO_AUTOFLAT/$maoDriveDir/Flat-sky-V" "$BASE_DATA_DIR/$maoDataDir"
         cp -r "$MAO_AUTOFLAT/$maoDriveDir/Flat-sky-B" "$BASE_DATA_DIR/$maoDataDir"
+        cp -r "$MAO_AUTOFLAT/$maoDriveDir/Flat-sky-I" "$BASE_DATA_DIR/$maoDataDir"
+        cp -r "$MAO_AUTOFLAT/$maoDriveDir/Flat-sky-R" "$BASE_DATA_DIR/$maoDataDir"
     else
         echo "Cannot find $maoDriveDir on MAO Drive"
         exit 1
